@@ -114,9 +114,6 @@ flowchart TD
 ```
 
 ### Database Schema
-
-#### Firestore Collections Structure
-**Database Schema Diagram**  
 ```mermaid
 erDiagram
     Users ||--o{ Tickets : creates
