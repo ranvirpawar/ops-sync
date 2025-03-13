@@ -1,86 +1,83 @@
-# 🌟 Hierarchical Ticketing System: Project Documentation 🌟
-
-Welcome to the ultimate guide for building a **two-level hierarchical ticketing system**! This document is your roadmap to creating a robust, user-friendly system using **Flutter** and **Firebase**. Packed with features like employee authentication, ticket management, task tracking, and role-based personalization, this project is designed to streamline workflows and boost productivity.
+# Complete Ticketing System Documentation
 
 ---
 
-## 🚀 Project Scope and Overview
+## Project Scope and Overview
 
-This documentation provides a comprehensive guide for developing a two-level hierarchical ticketing system with the following **core components**:
+This documentation provides a comprehensive guide for developing a two-level hierarchical ticketing system with the following core components:
 
-- **Employee Authentication**: Secure login and role-based access control to keep the system safe and organized.
-- **Ticket Management**: Creation, tracking, and resolution of tickets to manage issues efficiently.
-- **Task Management**: Granular task tracking within tickets for detailed progress monitoring.
-- **User Role Personalization**: Tailored views and permissions based on user roles for a personalized experience.
+- **Employee Authentication:** Secure login and role-based access control  
+- **Ticket Management:** Creation, tracking, and resolution of tickets  
+- **Task Management:** Granular task tracking within tickets  
+- **User Role Personalization:** Different views and permissions based on user roles  
 
-The system will be built using **Flutter** for seamless cross-platform support (iOS, Android, and web) and **Firebase** as the powerhouse backend infrastructure.
-
----
-
-## ⚙️ System Requirements
-
-### 🎯 Functional Requirements
-
-#### 👤 User Management
-- User registration and authentication via **Firebase Auth**.
-- Role-based access: **Admin**, **Manager**, **Employee**.
-- Profile management with personal details.
-- Department assignment for organizational structure.
-
-#### 🎫 Ticket Management
-- Create, view, and edit tickets *(no deletion allowed)*.
-- Ticket types: **Bug**, **Feature Request**, **Support**, **Maintenance**.
-- Status workflow: **New → In Progress → On Hold → Resolved → Closed**.
-- Priority levels: **Low**, **Medium**, **High**, **Critical**.
-- Department/category assignment for smart routing.
-- Due date tracking and SLA monitoring.
-- Project grouping capability.
-- Ticket assignment to specific users.
-
-#### ✅ Task Management
-- Tasks linked to parent tickets.
-- Task types: **Development**, **Testing**, **Documentation**, **Research**.
-- Task status workflow: **Todo → In Progress → Review → Done**.
-- User assignment for accountability.
-- Due date tracking for timely completion.
-- Dependency tracking between related tasks.
-- Subtask support for complex breakdowns.
-
-#### 🔔 Notification System
-- In-app notifications for real-time updates.
-- Email notifications for critical changes.
-- Push notifications via **Firebase Cloud Messaging**.
-
-#### 📊 Reporting & Analytics
-- User performance metrics.
-- Ticket resolution time tracking.
-- Status transition analytics.
-- Daily statistical reporting.
-
-### 🛠️ Non-Functional Requirements
-- **Performance**: Lightning-fast response times (< 2 seconds) for all operations.
-- **Scalability**: Ready to handle a growing user base and ticket volume.
-- **Reliability**: 99.9% uptime for critical functions.
-- **Security**: Role-based access control and data encryption.
-- **Usability**: Intuitive UI with responsive design across all devices.
-- **Offline Support**: Basic functionality when the network drops.
+The system will be built using **Flutter** for cross-platform support and **Firebase** as the backend infrastructure.
 
 ---
 
-## 🏗️ Technical Architecture
+## System Requirements
 
-### 🛠️ Technology Stack
-- **Frontend**: **Flutter** (cross-platform magic for iOS, Android, and web).
-- **Backend**: **Firebase**
-  - **Cloud Functions**: Serverless backend logic.
-  - **Firestore**: NoSQL database for flexible storage.
-  - **Authentication**: Secure user management.
-  - **Cloud Messaging**: Push notifications.
-  - **Storage**: File attachments.
+### Functional Requirements
 
-### 📈 Flowchart
-Here’s a visual representation of the system architecture using Mermaid:
+#### User Management
+- **User registration and authentication** via Firebase Auth
+- **Role-based access** (Admin, Manager, Employee)
+- **Profile management** with personal details
+- **Department assignment** for organizational structure
 
+#### Ticket Management
+- **Create, view, and edit tickets** (no deletion functionality)
+- **Categorization by ticket types:** Bug, Feature Request, Support, Maintenance
+- **Status workflow tracking:** New, In Progress, On Hold, Resolved, Closed
+- **Priority assignment:** Low, Medium, High, Critical
+- **Department/category assignment** for routing
+- **Due date tracking** and SLA monitoring
+- **Project grouping capability**
+- **Ticket assignment** to specific users
+
+#### Task Management
+- **Tasks directly linked** to parent tickets
+- **Task types:** Development, Testing, Documentation, Research
+- **Task status workflow:** Todo, In Progress, Review, Done
+- **User assignment** for accountability
+- **Due date tracking** for timely completion
+- **Dependency tracking** between related tasks
+- **Subtask support** for breaking down complex items
+
+#### Notification System
+- **In-app notifications** for updates
+- **Email notifications** for critical changes
+- **Push notifications** via Firebase Cloud Messaging
+
+#### Reporting & Analytics
+- **User performance metrics**
+- **Ticket resolution time tracking**
+- **Status transition analytics**
+- **Daily statistical reporting**
+
+### Non-Functional Requirements
+- **Performance:** Fast response times (< 2 seconds) for all operations
+- **Scalability:** Support for growing user base and ticket volume
+- **Reliability:** 99.9% uptime for critical functions
+- **Security:** Role-based access control and data encryption
+- **Usability:** Intuitive UI with responsive design for all devices
+- **Offline Support:** Basic functionality when network is unavailable
+
+---
+
+## Technical Architecture
+
+### Technology Stack
+- **Frontend:** Flutter (cross-platform for iOS, Android, and web)
+- **Backend:** Firebase
+  - **Cloud Functions** for serverless backend logic
+  - **Firestore** for NoSQL database
+  - **Authentication** for user management
+  - **Cloud Messaging** for push notifications
+  - **Storage** for file attachments
+
+### System Architecture Diagram
+**Ticketing System Architecture**  
 ```mermaid
 flowchart TD
     subgraph Client
@@ -114,30 +111,13 @@ flowchart TD
     end
     
     CF <--> E
-    🌟 Hierarchical Ticketing System Documentation
-Welcome to the comprehensive guide for developing a robust, user-friendly Hierarchical Ticketing System! This system leverages Flutter for cross-platform awesomeness and Firebase for a scalable backend. With features like user authentication, ticket and task management, and role-based access, we’re building something epic. Let’s dive in! 🚀
+```
 
-🎯 Project Overview
-This ticketing system is designed to streamline task management within projects. It’s hierarchical—tickets group tasks, and projects group tickets. Key features include:
+### Database Schema
 
-User Authentication: Secure login with role-based access (admin, manager, employee).
-Ticket Management: Create, assign, and track tickets with statuses and priorities.
-Task Management: Nested tasks with dependencies and subtasks.
-Notifications: Keep users in the loop with in-app, email, and push alerts.
-Projects: Organize tickets under projects with team member management.
-Built with Flutter for a seamless UI across platforms and Firebase for authentication, Firestore database, and Cloud Functions, this system is both powerful and flexible.
-
-💾 Database Schema
-📋 Firestore Collections Structure
-Here’s how our data is organized in Firestore, a NoSQL database perfect for this hierarchical setup. Below is an Entity-Relationship (ER) Diagram crafted with Mermaid to visualize the connections:
-
-mermaid
-
-Collapse
-
-Wrap
-
-Copy
+#### Firestore Collections Structure
+**Database Schema Diagram**  
+```mermaid
 erDiagram
     Users ||--o{ Tickets : creates
     Users ||--o{ Tasks : assigned
@@ -238,301 +218,293 @@ erDiagram
         string status
         array members
     }
-Note: If your Markdown viewer doesn’t support Mermaid, use the Mermaid Live Editor to generate a PNG image and embed it like this:
+```
 
-markdown
 
-Collapse
+#### Detailed Collection Descriptions
 
-Wrap
+**Users Collection**  
+Path: `users/{userId}`  
+- `uid: string` (primary key)
+- `email: string`
+- `displayName: string`
+- `role: string` (admin, manager, employee)
+- `department: string`
+- `createdAt: timestamp`
+- `lastActive: timestamp`
+- `fcmToken: string` (optional)
 
-Copy
-![ER Diagram](./path-to-er-diagram.png)
-🔍 Detailed Collection Descriptions
-👤 Users Collection
-text
+**Tickets Collection**  
+Path: `tickets/{ticketId}`  
+- `title: string`
+- `description: string`
+- `type: string` (bug, feature, support, maintenance)
+- `status: string` (new, inProgress, onHold, resolved, closed)
+- `priority: string` (low, medium, high, critical)
+- `createdBy: string` (userId)
+- `assignedTo: string` (userId)
+- `department: string`
+- `project: string` (projectId)
+- `createdAt: timestamp`
+- `updatedAt: timestamp`
+- `lastUpdatedBy: string` (userId)
+- `dueDate: timestamp`
+- `tags: array of strings`
+- `watchers: array of userIds`
 
-Collapse
+**Tasks Collection**  
+Path: `tickets/{ticketId}/tasks/{taskId}`  
+- `title: string`
+- `description: string`
+- `type: string` (development, testing, documentation, research)
+- `status: string` (todo, inProgress, review, done)
+- `assignedTo: string` (userId)
+- `createdBy: string` (userId)
+- `createdAt: timestamp`
+- `updatedAt: timestamp`
+- `lastUpdatedBy: string` (userId)
+- `dueDate: timestamp`
+- `order: number` (for sorting)
+- `dependencies: array of taskIds`
+- `isSubtask: boolean`
+- `parentTaskId: string` (taskId, if isSubtask is true)
 
-Wrap
+**Comments Collection**  
+Paths:  
+- `tickets/{ticketId}/comments/{commentId}`  
+- `tickets/{ticketId}/tasks/{taskId}/comments/{commentId}`  
+Fields:  
+- `text: string`
+- `createdBy: string` (userId)
+- `createdAt: timestamp`
+- `updatedAt: timestamp`
+- `isEdited: boolean`
 
-Copy
-users/{userId}
-  - uid: string (primary key)
-  - email: string
-  - displayName: string
-  - role: string (admin, manager, employee)
-  - department: string
-  - createdAt: timestamp
-  - lastActive: timestamp
-  - fcmToken: string (optional, for push notifications)
-🎫 Tickets Collection
-text
+**Notifications Collection**  
+Path: `users/{userId}/notifications/{notificationId}`  
+- `title: string`
+- `message: string`
+- `relatedTo: string` (ticketId or taskId)
+- `relatedToType: string` (ticket or task)
+- `type: string` (assignment, mention, status_change, etc.)
+- `read: boolean`
+- `createdAt: timestamp`
 
-Collapse
+**ActivityLogs Collection**  
+Path: `activityLogs/{logId}`  
+- `action: string`
+- `entityId: string` (ticketId or taskId)
+- `entityType: string` (ticket or task)
+- `userId: string`
+- `timestamp: timestamp`
+- `details: map`
 
-Wrap
+**Projects Collection**  
+Path: `projects/{projectId}`  
+- `name: string`
+- `description: string`
+- `department: string`
+- `startDate: timestamp`
+- `endDate: timestamp`
+- `status: string`
+- `members: array of userIds`
 
-Copy
-tickets/{ticketId}
-  - title: string
-  - description: string
-  - type: string (bug, feature, support, maintenance)
-  - status: string (new, inProgress, onHold, resolved, closed)
-  - priority: string (low, medium, high, critical)
-  - createdBy: string (userId)
-  - assignedTo: string (userId)
-  - department: string
-  - project: string (projectId)
-  - createdAt: timestamp
-  - updatedAt: timestamp
-  - lastUpdatedBy: string (userId)
-  - dueDate: timestamp
-  - tags: array of strings
-  - watchers: array of userIds
-✅ Tasks Collection
-text
+---
 
-Collapse
+## Development Phases
 
-Wrap
+### Phase 1: Project Setup and Initial Configuration
 
-Copy
-tickets/{ticketId}/tasks/{taskId}
-  - title: string
-  - description: string
-  - type: string (development, testing, documentation, research)
-  - status: string (todo, inProgress, review, done)
-  - assignedTo: string (userId)
-  - createdBy: string (userId)
-  - createdAt: timestamp
-  - updatedAt: timestamp
-  - lastUpdatedBy: string (userId)
-  - dueDate: timestamp
-  - order: number (for sorting)
-  - dependencies: array of taskIds
-  - isSubtask: boolean
-  - parentTaskId: string (taskId, if isSubtask is true)
-💬 Comments Collection
-text
+#### Create Firebase Project
+- Set up new Firebase project
+- Configure authentication methods
+- Set up Firestore database
+- Initialize Cloud Functions
 
-Collapse
+#### Create Flutter Project
+- Initialize Flutter project
+- Configure dependencies
+- Set up project structure
+- Implement Firebase integration
 
-Wrap
+#### Implement Authentication
+- User registration flow
+- Login functionality
+- Role-based authorization
+- Password reset functionality
 
-Copy
-tickets/{ticketId}/comments/{commentId}
-tickets/{ticketId}/tasks/{taskId}/comments/{commentId}
-  - text: string
-  - createdBy: string (userId)
-  - createdAt: timestamp
-  - updatedAt: timestamp
-  - isEdited: boolean
-🔔 Notifications Collection
-text
+### Phase 2: Core Functionality Development
 
-Collapse
+#### User Management
+- Create user profile screens
+- Implement role management
+- Set up department assignments
+- Profile editing functionality
 
-Wrap
+#### Ticket Management
+- Create ticket listing views
+- Implement ticket creation forms
+- Build ticket detail screens
+- Implement status workflow
+- Set up priority handling
+- Develop assignment functionality
 
-Copy
-users/{userId}/notifications/{notificationId}
-  - title: string
-  - message: string
-  - relatedTo: string (ticketId or taskId)
-  - relatedToType: string (ticket or task)
-  - type: string (assignment, mention, status_change, etc.)
-  - read: boolean
-  - createdAt: timestamp
-📜 ActivityLogs Collection
-text
+#### Task Management
+- Create task board views
+- Implement task creation
+- Set up status transitions
+- Implement assignment functionality
+- Build dependency tracking
+- Set up subtask functionality
 
-Collapse
+### Phase 3: Advanced Features
 
-Wrap
+#### Notification System
+- Set up in-app notifications
+- Implement email notifications
+- Configure push notifications
+- Create notification preferences
 
-Copy
-activityLogs/{logId}
-  - action: string
-  - entityId: string (ticketId or taskId)
-  - entityType: string (ticket or task)
-  - userId: string
-  - timestamp: timestamp
-  - details: map
-📋 Projects Collection
-text
+#### Reporting & Analytics
+- Build dashboard views
+- Implement metrics calculations
+- Create report generation
+- Set up export functionality
 
-Collapse
+#### Project Management
+- Create project creation interface
+- Implement project-based views
+- Set up project member management
+- Configure ticket grouping
 
-Wrap
+### Phase 4: Testing and Deployment
 
-Copy
-projects/{projectId}
-  - name: string
-  - description: string
-  - department: string
-  - startDate: timestamp
-  - endDate: timestamp
-  - status: string
-  - members: array of userIds
-📅 Development Phases
-🌱 Phase 1: Project Setup and Initial Configuration
-Create Firebase Project
-Set up a new Firebase project.
-Configure authentication methods (email/password, etc.).
-Initialize Firestore database.
-Set up Cloud Functions.
-Create Flutter Project
-Initialize Flutter project.
-Configure dependencies (Firebase, etc.).
-Set up project structure.
-Implement Firebase integration.
-Implement Authentication
-User registration flow.
-Login functionality.
-Role-based authorization.
-Password reset functionality.
-🌟 Phase 2: Core Functionality Development
-User Management
-Create user profile screens.
-Implement role management.
-Set up department assignments.
-Profile editing functionality.
-Ticket Management
-Create ticket listing views.
-Implement ticket creation forms.
-Build ticket detail screens.
-Implement status workflow.
-Set up priority handling.
-Develop assignment functionality.
-Task Management
-Create task board views (e.g., Kanban).
-Implement task creation.
-Set up status transitions.
-Implement assignment functionality.
-Build dependency tracking.
-Set up subtask functionality.
-🚀 Phase 3: Advanced Features
-Notification System
-Set up in-app notifications.
-Implement email notifications.
-Configure push notifications via FCM.
-Create notification preferences.
-Reporting & Analytics
-Build dashboard views.
-Implement metrics calculations.
-Create report generation.
-Set up export functionality (PDF, CSV).
-Project Management
-Create project creation interface.
-Implement project-based views.
-Set up project member management.
-Configure ticket grouping.
-✅ Phase 4: Testing and Deployment
-Unit Testing
-Test individual components.
-Validate business logic.
-Test authentication flow.
-Integration Testing
-Test component interactions.
-Validate workflow processes.
-Test Firebase integration.
-User Acceptance Testing
-Gather feedback from stakeholders.
-Refine UI/UX based on feedback.
-Fix identified issues.
-Deployment
-Prepare production environment.
-Deploy to app stores (iOS/Android).
-Configure web deployment.
-Set up monitoring (e.g., Crashlytics).
-🎨 Frontend Implementation Details
-📂 Project Structure
-text
+#### Unit Testing
+- Test individual components
+- Validate business logic
+- Test authentication flow
 
-Collapse
+#### Integration Testing
+- Test component interactions
+- Validate workflow processes
+- Test Firebase integration
 
-Wrap
+#### User Acceptance Testing
+- Get feedback from stakeholders
+- Refine UI/UX based on feedback
+- Fix identified issues
 
-Copy
+#### Deployment
+- Prepare production environment
+- Deploy to app stores
+- Configure web deployment
+- Set up monitoring
+
+---
+
+## Frontend Implementation Details
+
+### Project Structure
+```
+
 lib/
-  ├── main.dart              # App entry point
-  ├── app.dart              # App configuration
+  ├── main.dart
+  ├── app.dart
   ├── config/
-  │   ├── routes.dart       # Navigation routes
-  │   ├── themes.dart       # UI themes
-  │   └── constants.dart    # App-wide constants
+  │   ├── routes.dart
+  │   ├── themes.dart
+  │   └── constants.dart
   ├── models/
-  │   ├── user.dart         # User data model
-  │   ├── ticket.dart       # Ticket data model
-  │   ├── task.dart         # Task data model
-  │   └── project.dart      # Project data model
+  │   ├── user.dart
+  │   ├── ticket.dart
+  │   ├── task.dart
+  │   └── project.dart
   ├── services/
-  │   ├── auth_service.dart # Firebase auth logic
-  │   ├── ticket_service.dart # Ticket CRUD
-  │   ├── task_service.dart # Task CRUD
-  │   └── notification_service.dart # Notification handling
+  │   ├── auth_service.dart
+  │   ├── ticket_service.dart
+  │   ├── task_service.dart
+  │   └── notification_service.dart
   ├── providers/
-  │   ├── auth_provider.dart # State management for auth
-  │   ├── ticket_provider.dart # Ticket state
-  │   └── task_provider.dart # Task state
+  │   ├── auth_provider.dart
+  │   ├── ticket_provider.dart
+  │   └── task_provider.dart
   ├── screens/
-  │   ├── auth/             # Login, register screens
-  │   ├── dashboard/        # Main dashboard
-  │   ├── tickets/          # Ticket management screens
-  │   ├── tasks/            # Task management screens
-  │   └── settings/         # User settings
+  │   ├── auth/
+  │   ├── dashboard/
+  │   ├── tickets/
+  │   ├── tasks/
+  │   └── settings/
   └── widgets/
-      ├── common/           # Reusable UI components
-      ├── ticket/           # Ticket-specific widgets
-      └── task/             # Task-specific widgets
-🖼️ Key UI Components
-Authentication Screens
-Login screen with email/password.
-Registration screen for new users.
-Password reset screen.
-Profile setup screen post-registration.
-Dashboard
-Overview stats (tickets, tasks).
-Recent activities feed.
-Quick action buttons.
-Role-based personalized views.
-Ticket Management
-Filterable ticket list.
-Ticket creation form.
-Detailed ticket view with comments.
-Status workflow buttons.
-Task Management
-Kanban board for task statuses.
-Task creation form.
-Task detail view with dependencies.
-Subtask management UI.
-🔧 Backend Implementation Details
-🔥 Firebase Cloud Functions
-Task Assignment Notification
-Triggers on assignedTo field change.
-Creates a notification in notifications.
-Sends a push via FCM if token exists.
-Ticket Status Change Tracking
-Triggers on ticket status updates.
-Logs to activityLogs.
-Notifies creator and watchers.
-Automatic Ticket Status Updates
-Updates ticket status based on task completion.
-Sets to Resolved when all tasks are Done.
-Sets to In Progress when first task starts.
-Daily Statistics Generation
-Runs every 24 hours.
-Calculates ticket/task stats.
-Stores data for dashboard reporting.
-🔒 Security Rules
-text
+      ├── common/
+      ├── ticket/
+      └── task/
+```
 
-Collapse
+### Key UI Components
 
-Wrap
+#### Authentication Screens
+- **Login screen**
+- **Registration screen**
+- **Password reset screen**
+- **Profile setup screen**
 
-Copy
+#### Dashboard
+- **Overview statistics**
+- **Recent activities**
+- **Quick actions**
+- **Personalized views** based on user role
+
+#### Ticket Management
+- **Ticket list** with filters
+- **Ticket creation form**
+- **Ticket detail view**
+- **Ticket status workflow buttons**
+- **Comment section**
+
+#### Task Management
+- **Kanban board view**
+- **Task creation form**
+- **Task detail view**
+- **Dependency visualization**
+- **Subtask management**
+
+### UI Wireframes
+- **Dashboard Wireframe:** [Click to open image](#) | [Tap to open](#)
+- **Ticket Detail Wireframe:** [Click to open image](#) | [Tap to open](#)
+
+---
+
+## Backend Implementation Details
+
+### Firebase Cloud Functions
+
+#### Task Assignment Notification
+- **Triggers:** When a task's `assignedTo` field changes
+- **Actions:**  
+  - Creates notification for assigned user  
+  - Sends push notification if FCM token is available
+
+#### Ticket Status Change Tracking
+- **Triggers:** When a ticket's status changes
+- **Actions:**  
+  - Logs activity in the activity log  
+  - Notifies relevant stakeholders (creator, watchers)
+
+#### Automatic Ticket Status Updates
+- **Actions:**  
+  - Updates ticket status based on tasks completion  
+  - Marks ticket as resolved when all tasks are done  
+  - Updates ticket to "In Progress" when the first task starts
+
+#### Daily Statistics Generation
+- **Schedule:** Runs every 24 hours
+- **Actions:**  
+  - Calculates ticket and task statistics  
+  - Stores data for dashboard reporting
+
+### Security Rules
+
+```firestore
 service cloud.firestore {
   match /databases/{database}/documents {
     // Users can read their own data
@@ -572,3 +544,5 @@ service cloud.firestore {
     }
   }
 }
+```
+
